@@ -39,10 +39,11 @@
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <jicoco.version>1.1-127-gf49982f</jicoco.version>
-    <kotlin.version>1.9.10</kotlin.version>
-    <dokka.version>1.9.10</dokka.version>
-    <kotest.version>5.7.2</kotest.version>
-    <junit.version>5.10.0</junit.version>
+    <kotlin.version>2.4.20</kotlin.version>
+    <dokka.version>2.2.0</dokka.version>
+    <kotest.version>5.9.1</kotest.version>
+    <junit.version>5.14.4</junit.version>
+    <junit.platform.version>1.14.4</junit.platform.version>
   </properties>
 
   <dependencies>
@@ -66,12 +67,17 @@
       <artifactId>jicoco-config</artifactId>
       <version>${jicoco.version}</version>
     </dependency>
+    <dependency>
+      <groupId>org.jetbrains.kotlin</groupId>
+      <artifactId>kotlin-stdlib</artifactId>
+      <version>${kotlin.version}</version>
+    </dependency>
 
     <!-- test -->
     <dependency>
       <groupId>org.junit.platform</groupId>
       <artifactId>junit-platform-launcher</artifactId>
-      <version>1.10.0</version>
+      <version>${junit.platform.version}</version>
       <scope>test</scope>
     </dependency>
     <dependency>
@@ -82,7 +88,7 @@
     </dependency>
     <dependency>
       <groupId>org.junit.jupiter</groupId>
-      <artifactId>junit-jupiter-engine</artifactId>
+      <artifactId>junit-jupiter</artifactId>
       <version>${junit.version}</version>
       <scope>test</scope>
     </dependency>
@@ -153,7 +159,7 @@
           </execution>
         </executions>
         <configuration>
-          <jvmTarget>11</jvmTarget>
+          <jvmTarget>17</jvmTarget>
           <args>
             <arg>-Xallow-result-return-type</arg>
           </args>
@@ -190,7 +196,7 @@
           </execution>
         </executions>
         <configuration>
-          <release>11</release>
+          <release>17</release>
           <compilerArgs>
             <arg>-Xlint:all</arg>
           </compilerArgs>
@@ -269,6 +275,7 @@
           <includes>**/*</includes>
           <systemPropertyVariables>
             <java.util.logging.config.file>${project.build.testSourceDirectory}/../resources/logging.properties</java.util.logging.config.file>
+            <kotest.framework.classpath.scanning.autoscan.disable>true</kotest.framework.classpath.scanning.autoscan.disable>
           </systemPropertyVariables>
         </configuration>
       </plugin>
