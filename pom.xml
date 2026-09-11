@@ -38,7 +38,7 @@
 
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-    <jicoco.version>1.1-127-gf49982f</jicoco.version>
+    <jicoco.version>1.1-179-g52cf6ef</jicoco.version>
     <kotlin.version>2.4.20</kotlin.version>
     <dokka.version>2.2.0</dokka.version>
     <kotest.version>5.9.1</kotest.version>
@@ -60,7 +60,7 @@
     <dependency>
       <groupId>${project.groupId}</groupId>
       <artifactId>jitsi-utils</artifactId>
-      <version>1.0-127-g6c65524</version>
+      <version>1.0-153-gd5c0102</version>
     </dependency>
     <dependency>
       <groupId>${project.groupId}</groupId>
